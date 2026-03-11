@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio | Gracis WIZANA MFUMU</title>
+    <style>
+        /* =========================================
+           PALETTE DE COULEURS ET VARIABLES
+           ========================================= */
+        :root {
+            --bg-color: #121212;
+            --surface-color: #121212;
+            --primary: #BB86FC;
+            --primary-variant: #3700B3;
+            --secondary: #03DAC5;
+            --error: #CF6679;
+            
+            /* Textes selon le contraste */
+            --on-bg: rgba(255, 255, 255, 0.87);
+            --on-surface: rgba(255, 255, 255, 0.87);
+            --on-primary: #000000;
+            --on-secondary: #000000;
+        }
+
+        /* =========================================
+           RÉINITIALISATION ET STYLES DE BASE
+           ========================================= */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--on-bg);
+            line-height: 1.6;
+            scroll-behavior: smooth;
+        }
+
+        h1, h2, h3 {
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        a {
+            color: var(--secondary);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        a:hover {
+            color: var(--primary);
+        }
+
+        /* =========================================
+           NAVIGATION
+           ========================================= */
+        header {
+            background-color: var(--surface-color);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--primary);
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        nav a {
+            color: var(--on-surface);
+            font-weight: 500;
+        }
+
+        nav a:hover {
+            color: var(--secondary);
+        }
+
+        /* =========================================
+           SECTIONS ET CONTENEURS
+           ========================================= */
+        main {
+            margin-top: 80px; /* Espace pour le header fixe */
+        }
+
+        section {
+            padding: 4rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .hero {
+            text-align: center;
+            padding: 6rem 2rem;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            color: var(--on-bg);
+        }
+
+        .hero h1 span {
+            color: var(--primary);
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--secondary);
+            color: var(--on-secondary);
+            padding: 0.8rem 1.5rem;
+            border-radius: 4px;
+            font-weight: bold;
+            margin-top: 1rem;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background-color: var(--primary);
+            color: var(--on-primary);
+        }
+
+        /* =========================================
+           CARTES (Projets, Stages)
+           ========================================= */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .card {
+            background-color: var(--surface-color);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            padding: 1.5rem;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 15px rgba(187, 134, 252, 0.2); /* Ombre Primaire */
+            border-color: var(--primary-variant);
+        }
+
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 1rem;
+        }
+
+        .tag {
+            background-color: var(--primary-variant);
+            color: var(--on-bg);
+            padding: 0.3rem 0.6rem;
+            border-radius: 4px;
+            font-size: 0.8rem;
+        }
+
+        /* =========================================
+           FOOTER
+           ========================================= */
+        footer {
+            background-color: var(--surface-color);
+            text-align: center;
+            padding: 2rem;
+            margin-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">GWM.</div>
+        <nav>
+            <ul id="nav-links">
+                <li><a href="#accueil">Accueil</a></li>
+                <li><a href="#bts">Le BTS</a></li>
+                <li><a href="#projets">Projets</a></li>
+                <li><a href="#stages">Stages</a></li>
+                <li><a href="#veille">Veille Tech</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="accueil" class="hero">
+            <h1>Bonjour, je suis <span>Gracis WIZANA MFUMU</span></h1>
+            <p>Étudiant en BTS SIO & Passionné par l'informatique.</p>
+            <p>Découvrez mes réalisations, mes compétences et mon évolution professionnelle.</p>
+            <a href="#projets" class="btn">Voir mes projets</a>
+            <a href="lien_vers_ton_cv.pdf" target="_blank" class="btn" style="background-color: var(--primary); color: var(--on-primary); margin-left: 10px;">Mon CV</a>
+        </section>
+
+        <section id="bts">
+            <h2>Présentation du diplôme</h2>
+            <p>Le Brevet de Technicien Supérieur Services Informatiques aux Organisations (BTS SIO) forme aux métiers d'administrateur réseau ou de développeur pour répondre aux besoins numériques des organisations.</p>
+            <p>Dans le cadre de l'épreuve E4, ce portfolio retrace mon parcours et démontre l'acquisition des compétences clés du référentiel.</p>
+        </section>
+
+        <section id="projets">
+            <h2>Mes Projets de Formation</h2>
+            <p>Voici les réalisations effectuées dans le cadre de ma formation, avec les compétences mobilisées.</p>
+            
+            <div class="grid">
+                <div class="card">
+                    <h3>Refonte du réseau local</h3>
+                    <p>Mise en place d'une nouvelle architecture réseau pour une PME fictive. Configuration de VLANs et de règles de routage.</p>
+                    <div class="tags">
+                        <span class="tag">Gérer le patrimoine informatique</span>
+                        <span class="tag">Déployer un service</span>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h3>Application de gestion de tickets</h3>
+                    <p>Développement d'une application interne permettant le suivi et la résolution des incidents informatiques.</p>
+                    <div class="tags">
+                        <span class="tag">Travailler en mode projet</span>
+                        <span class="tag">Répondre aux incidents</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="stages">
+            <h2>Mes Périodes de Stage</h2>
+            <div class="grid">
+                <div class="card">
+                    <h3>Stage de 1ère année - Entreprise X</h3>
+                    <p><strong>Mission :</strong> Maintenance du parc informatique et assistance aux utilisateurs.</p>
+                    <p>Lors de ce stage, j'ai eu l'opportunité de résoudre des tickets quotidiens et de mettre en place des sauvegardes automatisées.</p>
+                    <div class="tags">
+                        <span class="tag">Gérer des sauvegardes</span>
+                        <span class="tag">Accompagner les utilisateurs</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="veille">
+            <h2>Ma Veille Technologique</h2>
+            <p>Sujet de veille : <strong>[Insère ton sujet ici, ex: L'évolution de l'Intelligence Artificielle dans la cybersécurité]</strong></p>
+            <p>Outils utilisés : Feedly, Google Alerts, Twitter (X).</p>
+            <div class="grid">
+                <div class="card">
+                    <h3 style="color: var(--secondary)">Article : L'IA générative face aux hackers</h3>
+                    <p>Résumé de l'article ou de l'analyse personnelle démontrant votre suivi technologique...</p>
+                    <div class="tags">
+                        <span class="tag">Mettre en œuvre des outils de veille</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Gracis WIZANA MFUMU - Portfolio BTS SIO</p>
+        <p>Hébergé sur <a href="https://github.com/ton-profil" target="_blank">GitHub Pages</a></p>
+    </footer>
+
+    <script>
+        // JS simple pour une navigation fluide (Smooth Scrolling)
+        document.querySelectorAll('nav a').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href').substring(1);
+                const targetSection = document.getElementById(targetId);
+                
+                if (targetSection) {
+                    window.scrollTo({
+                        top: targetSection.offsetTop - 70, // Ajustement pour le header
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
