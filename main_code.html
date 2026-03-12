@@ -1,24 +1,339 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Main Code</title>
+    <title>Portfolio | Gracis WIZANA MFUMU</title>
+    <style>
+        /* PALETTE DE COULEURS ET VARIABLES */
+        :root {
+            --bg-color: #121212;
+            --surface-color: #1e1e1e; /* Légèrement plus clair pour le contraste */
+            --primary: #BB86FC;
+            --primary-variant: #3700B3;
+            --secondary: #03DAC5;
+            --on-bg: rgba(255, 255, 255, 0.87);
+            --on-surface: rgba(255, 255, 255, 0.87);
+            --on-primary: #000000;
+            --on-secondary: #000000;
+        }
+
+        /* RÉINITIALISATION ET STYLES DE BASE */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--on-bg);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3 {
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        /* NAVIGATION FIXE */
+        header {
+            background-color: var(--surface-color);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--primary);
+            cursor: pointer;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        nav a {
+            color: var(--on-surface);
+            font-weight: 500;
+            text-decoration: none;
+            transition: 0.3s;
+            cursor: pointer;
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--secondary);
+            border-bottom: 2px solid var(--secondary);
+        }
+
+        /* GESTION DES SECTIONS (CHEMINS) */
+        main {
+            margin-top: 80px;
+            min-height: 80vh;
+        }
+
+        section {
+            display: none; /* Toutes les sections sont cachées par défaut */
+            padding: 4rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            animation: fadeIn 0.5s ease-in-out;
+        }
+
+        section.active {
+            display: block; /* Seule la section active s'affiche */
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* COMPÉTENCES (Style basé sur ton image) */
+        .competences-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .option-card {
+            background: #1a1a2e;
+            border-radius: 12px;
+            padding: 20px;
+            border: 1px solid rgba(187, 134, 252, 0.3);
+        }
+
+        .option-card h3 { color: #ffa500; border-bottom: 1px solid #333; padding-bottom: 10px; }
+        .option-card.slam h3 { color: #4facfe; }
+
+        .skill-group { margin-bottom: 15px; }
+        .skill-group h4 { font-size: 0.9rem; color: #aaa; margin-bottom: 5px; text-transform: uppercase; }
+        .skill-list { list-style: none; display: grid; grid-template-columns: 1fr 1fr; gap: 5px; }
+        .skill-list li::before { content: "› "; color: var(--secondary); }
+
+        /* CARTES ET GRILLES */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .card {
+            background-color: var(--surface-color);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            padding: 1.5rem;
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 15px rgba(187, 134, 252, 0.2);
+            border-color: var(--primary);
+        }
+
+        .tag {
+            background-color: var(--primary-variant);
+            color: white;
+            padding: 0.3rem 0.6rem;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            display: inline-block;
+            margin: 5px 2px;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--secondary);
+            color: var(--on-secondary);
+            padding: 0.8rem 1.5rem;
+            border-radius: 4px;
+            font-weight: bold;
+            margin-top: 1rem;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+    </style>
 </head>
 <body>
-    <nav>
-        <ul>
-            <li><a href="#certificats">Certificats Obtenus</a></li>
-            <li><a href="#bts-details">BTS SIO Détails</a></li>
-        </ul>
-    </nav>
-    <section id="certificats">
-        <h2>Certificats Obtenus</h2>
-        <p>Details about the obtained certificates will go here.</p>
-    </section>
-    <section id="bts-details">
-        <h2>BTS SIO Détails</h2>
-        <p>Details about BTS SIO will be expanded here.</p>
-    </section>
+
+    <header>
+        <div class="logo" onclick="showSection('accueil')">GR9.</div>
+        <nav>
+            <ul>
+                <li><a onclick="showSection('accueil')" id="nav-accueil">Accueil</a></li>
+                <li><a onclick="showSection('bts')" id="nav-bts">Le BTS</a></li>
+                <li><a onclick="showSection('competences')" id="nav-competences">Compétences</a></li>
+                <li><a onclick="showSection('projets')" id="nav-projets">Projets</a></li>
+                <li><a onclick="showSection('certificats')" id="nav-certificats">Certifications</a></li>
+                <li><a onclick="showSection('stages')" id="nav-stages">Stages</a></li>
+                <li><a onclick="showSection('veille')" id="nav-veille">Veille Tech</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="accueil" class="active">
+            <div style="text-align: center; padding: 4rem 0;">
+                <h1>Bien sheguey ici c'est <span>Gracis WIZANA MFUMU</span></h1>
+                <p>Étudiant en BTS SIO & Passionné par l'informatique.</p>
+                <a onclick="showSection('projets')" class="btn">Voir mes projets</a>
+                <a href="#" class="btn" style="background-color: var(--primary); margin-left: 10px;">Mon CV</a>
+            </div>
+        </section>
+
+        <section id="bts">
+            <h2>Présentation du diplôme</h2>
+            <p>Le BTS Services Informatiques aux Organisations est un diplôme d'État formant aux services informatiques fournis aux organisations.</p>
+            <div class="grid">
+                <div class="card">
+                    <h3>SISR</h3>
+                    <p>Infrastructures, Systèmes et Réseaux. Idéal pour devenir administrateur système ou expert en cybersécurité.</p>
+                </div>
+                <div class="card">
+                    <h3>SLAM</h3>
+                    <p>Solutions Logicielles et Applications Métiers. Pour ceux qui aiment coder et concevoir des logiciels.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="competences">
+            <h2>Mes Compétences</h2>
+            <div class="competences-container">
+                <div class="option-card sisr">
+                    <h3>Option SISR</h3>
+                    <div class="skill-group">
+                        <h4>Compétences techniques</h4>
+                        <ul class="skill-list">
+                            <li>Administration Windows</li>
+                            <li>Administration Linux</li>
+                            <li>Virtualisation</li>
+                            <li>Réseaux TCP/IP</li>
+                        </ul>
+                    </div>
+                    <div class="skill-group">
+                        <h4>Services et Sécurité</h4>
+                        <ul class="skill-list">
+                            <li>Active Directory</li>
+                            <li>Pare-feu</li>
+                            <li>VPN</li>
+                            <li>Supervision</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="option-card slam">
+                    <h3>Option SLAM</h3>
+                    <div class="skill-group">
+                        <h4>Compétences techniques</h4>
+                        <ul class="skill-list">
+                            <li>Développement Web</li>
+                            <li>Applications mobiles</li>
+                            <li>Bases de données</li>
+                            <li>Programmation Objet</li>
+                        </ul>
+                    </div>
+                    <div class="skill-group">
+                        <h4>Technologies</h4>
+                        <ul class="skill-list">
+                            <li>Java, C#, Python</li>
+                            <li>HTML, CSS, JS</li>
+                            <li>React, Angular</li>
+                            <li>SQL, NoSQL</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="projets">
+            <h2>Mes Projets de Formation</h2>
+            <div class="grid">
+                <div class="card">
+                    <h3>Refonte du réseau local</h3>
+                    <p>Configuration de VLANs et routage pour une PME.</p>
+                    <div class="tag">Gérer le patrimoine</div>
+                </div>
+                <div class="card">
+                    <h3>Application de gestion</h3>
+                    <p>Développement d'un outil de ticketing en PHP/SQL.</p>
+                    <div class="tag">Mode Projet</div>
+                </div>
+            </div>
+        </section>
+
+        <section id="certificats">
+            <h2>Mes Certifications</h2>
+            <div class="grid">
+                <div class="card">
+                    <h3>Certification ANSSI</h3>
+                    <p>SecNumAcadémie : Initiation à la cybersécurité.</p>
+                </div>
+                <div class="card">
+                    <h3>Certification Cisco</h3>
+                    <p>Introduction aux réseaux (CCNA1).</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="stages">
+            <h2>Mes Périodes de Stage</h2>
+            <p>Contenu des stages à venir...</p>
+        </section>
+
+        <section id="veille">
+            <h2>Ma Veille Technologique</h2>
+            <p>Sujet : <strong>L'IA dans la cybersécurité</strong></p>
+            <div class="card" style="margin-top: 1rem;">
+                <h3>Article phare : L'IA générative</h3>
+                <p>Résumé de ma veille...</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Gracis WIZANA MFUMU - Portfolio BTS SIO</p>
+    </footer>
+
+    <script>
+        function showSection(sectionId) {
+            // 1. Cacher toutes les sections
+            const sections = document.querySelectorAll('section');
+            sections.forEach(sec => sec.classList.remove('active'));
+
+            // 2. Afficher la section demandée
+            const targetSection = document.getElementById(sectionId);
+            if (targetSection) {
+                targetSection.classList.add('active');
+            }
+
+            // 3. Mettre à jour le style du menu de navigation
+            const navLinks = document.querySelectorAll('nav a');
+            navLinks.forEach(link => link.classList.remove('active'));
+            const activeLink = document.getElementById('nav-' + sectionId);
+            if (activeLink) activeLink.classList.add('active');
+
+            // 4. Remonter en haut de page
+            window.scrollTo(0, 0);
+        }
+    </script>
 </body>
 </html>
