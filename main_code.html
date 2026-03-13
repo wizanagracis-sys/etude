@@ -83,8 +83,10 @@
         <nav>
             <ul>
                 <li><a onclick="showSection('accueil')" id="nav-accueil">Accueil</a></li>
+                <li><a onclick="showSection('propos')" id="nav-propos">À Propos</a></li>
                 <li><a onclick="showSection('bts')" id="nav-bts">Le BTS</a></li>
                 <li><a onclick="showSection('competences')" id="nav-competences">Compétences</a></li>
+                <li><a onclick="showSection('propos')" id="nav-propos">À Propos</a></li>
                 <li><a onclick="showSection('projets')" id="nav-projets">Projets</a></li>
                 <li><a onclick="showSection('contact')" id="nav-contact">Contact</a></li>
             </ul>
@@ -95,12 +97,59 @@
         <section id="accueil" class="active">
             <div style="text-align: center; padding: 80px 0;">
                 <h1 style="font-size: 3.5rem; margin-bottom: 10px;">Gracis <span style="color:var(--primary)">WIZANA MFUMU</span></h1>
-                <p style="font-size: 1.3rem; color: var(--text-dim);">Étudiant en BTS SIO (SISR / SLAM)</p>
+                <p style="font-size: 1.3rem; color: var(--text-dim);">Étudiant en BTS SIO SISR</p>
                 <div style="margin-top: 40px;">
                     <a onclick="showSection('projets')" class="btn">Découvrir mes projets</a>
-                    <a href="#" class="btn" style="background: var(--primary); margin-left: 15px;">Mon CV (PDF)</a>
+                    <a href="https://drive.google.com/file/d/1KUwL3E89YroeGwK6_uzb_qzTQFX3WXIf/view?usp=drive_link" class="btn" style="background: var(--primary); margin-left: 15px;">Mon CV (PDF)</a>
                 </div>
             </div>
+        </section>
+        
+        <section id="propos">
+            <h2>À Propos de moi</h2>
+            <div class="about-container">
+                <div class="about-image">
+                    <div class="profile-placeholder">👤</div>
+                </div>
+                <div class="about-text">
+                    <h3 style="color: var(--secondary); margin-bottom: 15px;">Qui suis-je ?</h3>
+                    <p>Actuellement étudiant en <strong>première année de BTS SIO </strong> (Services Informatiques aux Organisations), je suis un passionné d'informatique depuis toujours. Curieux de comprendre comment fonctionnent les systèmes qui nous entourent, j'ai choisi cette formation pour allier théorie et pratique.</p>
+                    <br>
+                    <p>Mon objectif est de devenir un expert polyvalent en cybersécurité dès mon cursus en BTS SIO, avant de me spécialiser dans l'intelligence artificielle. Je suis convaincu que l'avenir de la protection numérique repose sur l'alliance de ces deux domaines : utiliser l'IA pour anticiper les menaces et renforcer la sécurité des infrastructures. Je souhaite ainsi maîtriser ces deux piliers pour offrir des solutions technologiques innovantes et ultra-sécurisées.</p>
+                    <br>
+                    <p><strong>Mes qualités :</strong> Autonome,Grande capacité d'adaptation et compréhension, rigoureux et doté d'un bon esprit d'équipe. J'aime apprendre de nouvelles technologies et relever des défis techniques.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="stages">
+            <h2>Parcours Professionnel</h2>
+        
+            <div class="timeline">
+                <div class="card" style="margin-bottom: 2rem; border-left: 4px solid var(--secondary);">
+                    <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap;">
+                        <div>
+                            <h3 style="color: var(--secondary); margin-bottom: 5px;">Stage de 1ère année</h3>
+                            <p style="font-weight: bold; color: #fff;"> //nom de l'entrepise</p>
+                        </div>
+                        <span style="background: rgba(3, 218, 197, 0.1); color: var(--secondary); padding: 5px 12px; border-radius: 20px; font-size: 0.8rem; font-weight: bold;">
+                            Juin - Juillet 2026 (5 semaines)
+                        </span>
+                    </div>
+                
+                    <p style="margin-top: 15px; color: var(--text-dim);">
+                        <em>Description de la mission :</em><br>
+                        //ma description
+                    </p>
+    
+                    <div style="margin-top: 15px;">
+                        <p style="font-size: 0.9rem; font-weight: bold; margin-bottom: 8px;">Activités principales :</p>
+                        <ul class="list-style">
+                        <li></li> //mes mission
+                    </ul>
+                </div>
+            </div>
+
         </section>
 
         <section id="bts">
@@ -112,7 +161,7 @@
             <div class="info-grid" style="margin-bottom: 3rem;">
                 <div class="card">
                     <h3 style="color:var(--secondary)">Présentation</h3>
-                    <p style="font-size: 0.9rem;">Formation de niveau Bac+2 préparant aux métiers de l'informatique réseau et du développement applicatif.</p>
+                    <p style="font-size: 0.9rem;">Le Brevet de Technicien Supérieur Services Informatiques aux Organisations (BTS SIO) forme aux métiers d'administrateur réseau ou de développeur pour répondre aux besoins numériques des organisations. Dans le cadre de l'épreuve E4, ce portfolio retrace mon parcours et démontre l'acquisition des compétences clés du référentiel.</p>
                 </div>
                 <div class="card">
                     <h3 style="color:var(--secondary)">Validation</h3>
@@ -199,9 +248,9 @@
                 <div>
                     <p style="margin-bottom: 20px;">N'hésitez pas à me contacter pour toute information complémentaire ou opportunité de stage.</p>
                     <ul class="list-style">
-                        <li><strong>Email :</strong> gracis.wizana@exemple.fr</li>
-                        <li><strong>Localisation :</strong> Île-de-France</li>
-                        <li><strong>LinkedIn :</strong> @graciswizana</li>
+                        <li><strong>Email :</strong> wizanagracis@gmai.com</li>
+                        <li><strong>Localisation :</strong> Bondy,Île-de-France,France</li>
+                        <li><a href="https://www.google.com" target="_blank"><strong>LinkedIn :</strong></a> gracis wizana mfumu</li>
                     </ul>
                 </div>
                 <form class="contact-form">
@@ -216,6 +265,7 @@
 
     <footer style="text-align: center; padding: 2rem; color: var(--text-dim); font-size: 0.8rem; border-top: 1px solid rgba(255,255,255,0.05);">
         &copy; 2026 Gracis WIZANA MFUMU - Portfolio BTS SIO
+        <p>Hébergé sur <a href="https://github.com/wizanagracis-sys/etude/" target="_blank">Github page</a></p>
     </footer>
 
     <script>
