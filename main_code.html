@@ -5,173 +5,75 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio | Gracis WIZANA MFUMU</title>
     <style>
-        /* PALETTE DE COULEURS ET VARIABLES */
         :root {
-            --bg-color: #121212;
-            --surface-color: #1e1e1e; /* Légèrement plus clair pour le contraste */
+            --bg-color: #0b0f1a;
+            --surface-color: #161b2a;
+            --card-bg: #1c2333;
             --primary: #BB86FC;
-            --primary-variant: #3700B3;
             --secondary: #03DAC5;
-            --on-bg: rgba(255, 255, 255, 0.87);
-            --on-surface: rgba(255, 255, 255, 0.87);
-            --on-primary: #000000;
-            --on-secondary: #000000;
+            --text-main: rgba(255, 255, 255, 0.9);
+            --text-dim: #94a3b8;
+            --accent-orange: #ffa500;
+            --accent-blue: #4facfe;
         }
 
-        /* RÉINITIALISATION ET STYLES DE BASE */
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, sans-serif; }
 
-        body {
-            background-color: var(--bg-color);
-            color: var(--on-bg);
-            line-height: 1.6;
-            overflow-x: hidden;
-        }
+        body { background-color: var(--bg-color); color: var(--text-main); line-height: 1.6; overflow-x: hidden; }
 
-        h1, h2, h3 {
-            color: var(--primary);
-            margin-bottom: 1rem;
-        }
-
-        /* NAVIGATION FIXE */
+        /* HEADER & NAV */
         header {
-            background-color: var(--surface-color);
+            background-color: rgba(22, 27, 42, 0.95);
             border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-            padding: 1rem 2rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+            position: fixed; width: 100%; top: 0; z-index: 1000;
+            padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center;
         }
 
-        .logo {
-            font-size: 1.5rem;
-            font-weight: bold;
-            color: var(--primary);
-            cursor: pointer;
-        }
+        .logo { font-size: 1.5rem; font-weight: bold; color: var(--primary); cursor: pointer; letter-spacing: 2px; }
 
-        nav ul {
-            list-style: none;
-            display: flex;
-            gap: 1.5rem;
-        }
+        nav ul { list-style: none; display: flex; gap: 1.5rem; }
+        nav a { color: var(--text-main); text-decoration: none; cursor: pointer; font-weight: 500; transition: 0.3s; font-size: 0.9rem; }
+        nav a:hover, nav a.active { color: var(--secondary); }
 
-        nav a {
-            color: var(--on-surface);
-            font-weight: 500;
-            text-decoration: none;
-            transition: 0.3s;
-            cursor: pointer;
-        }
+        /* MAIN STRUCTURE */
+        main { margin-top: 80px; min-height: 90vh; }
+        section { display: none; max-width: 1200px; margin: 0 auto; padding: 3rem 2rem; animation: fadeIn 0.5s ease; }
+        section.active { display: block; }
 
-        nav a:hover, nav a.active {
-            color: var(--secondary);
-            border-bottom: 2px solid var(--secondary);
-        }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
 
-        /* GESTION DES SECTIONS (CHEMINS) */
-        main {
-            margin-top: 80px;
-            min-height: 80vh;
-        }
+        h2 { text-align: center; margin-bottom: 2rem; color: var(--primary); font-size: 2rem; }
 
-        section {
-            display: none; /* Toutes les sections sont cachées par défaut */
-            padding: 4rem 2rem;
-            max-width: 1200px;
-            margin: 0 auto;
-            animation: fadeIn 0.5s ease-in-out;
-        }
+        /* GRILLES ET CARTES */
+        .info-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2rem; }
+        .card { background: var(--card-bg); border-radius: 12px; padding: 20px; border: 1px solid rgba(255,255,255,0.05); transition: 0.3s; }
+        .card:hover { border-color: var(--primary); transform: translateY(-3px); }
 
-        section.active {
-            display: block; /* Seule la section active s'affiche */
-        }
+        /* STYLE "BTS SIO" (Inspiré de tes images) */
+        .bts-header { text-align: center; margin-bottom: 3rem; }
+        .option-box { border-radius: 15px; padding: 25px; border: 1px solid rgba(255,255,255,0.1); position: relative; }
+        .option-box.sisr { border-left: 5px solid var(--accent-orange); }
+        .option-box.slam { border-left: 5px solid var(--accent-blue); }
+        .option-title { display: flex; align-items: center; gap: 10px; margin-bottom: 15px; font-weight: bold; }
 
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(10px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
+        /* STYLE COMPETENCES TECHNIQUES */
+        .comp-section { margin-bottom: 4rem; }
+        .comp-title-bar { background: rgba(255,255,255,0.03); padding: 10px 20px; border-radius: 8px; margin-bottom: 20px; display: flex; align-items: center; gap: 15px; border-left: 4px solid var(--secondary); }
+        .skill-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1.2rem; }
+        .skill-card { background: var(--surface-color); padding: 20px; border-radius: 10px; display: flex; flex-direction: column; gap: 8px; }
+        .skill-card h4 { color: #fff; font-size: 1.1rem; }
+        .skill-card p { color: var(--text-dim); font-size: 0.85rem; }
 
-        /* COMPÉTENCES (Style basé sur ton image) */
-        .competences-container {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 20px;
-        }
+        /* CONTACT FORM */
+        .contact-content { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; margin-top: 2rem; }
+        .contact-form { display: flex; flex-direction: column; gap: 1rem; }
+        .contact-form input, .contact-form textarea { background: var(--surface-color); border: 1px solid rgba(255,255,255,0.1); padding: 12px; border-radius: 6px; color: white; outline: none; }
+        .btn { background: var(--secondary); color: #000; padding: 12px 25px; border-radius: 6px; border: none; font-weight: bold; cursor: pointer; transition: 0.3s; text-align: center; text-decoration: none; display: inline-block; }
+        .btn:hover { opacity: 0.8; }
 
-        .option-card {
-            background: #1a1a2e;
-            border-radius: 12px;
-            padding: 20px;
-            border: 1px solid rgba(187, 134, 252, 0.3);
-        }
-
-        .option-card h3 { color: #ffa500; border-bottom: 1px solid #333; padding-bottom: 10px; }
-        .option-card.slam h3 { color: #4facfe; }
-
-        .skill-group { margin-bottom: 15px; }
-        .skill-group h4 { font-size: 0.9rem; color: #aaa; margin-bottom: 5px; text-transform: uppercase; }
-        .skill-list { list-style: none; display: grid; grid-template-columns: 1fr 1fr; gap: 5px; }
-        .skill-list li::before { content: "› "; color: var(--secondary); }
-
-        /* CARTES ET GRILLES */
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-
-        .card {
-            background-color: var(--surface-color);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 8px;
-            padding: 1.5rem;
-            transition: 0.3s;
-        }
-
-        .card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 4px 15px rgba(187, 134, 252, 0.2);
-            border-color: var(--primary);
-        }
-
-        .tag {
-            background-color: var(--primary-variant);
-            color: white;
-            padding: 0.3rem 0.6rem;
-            border-radius: 4px;
-            font-size: 0.8rem;
-            display: inline-block;
-            margin: 5px 2px;
-        }
-
-        .btn {
-            display: inline-block;
-            background-color: var(--secondary);
-            color: var(--on-secondary);
-            padding: 0.8rem 1.5rem;
-            border-radius: 4px;
-            font-weight: bold;
-            margin-top: 1rem;
-            text-decoration: none;
-            cursor: pointer;
-        }
-
-        footer {
-            text-align: center;
-            padding: 2rem;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-        }
+        ul.list-style { list-style: none; }
+        ul.list-style li { margin-bottom: 8px; font-size: 0.9rem; }
+        ul.list-style li::before { content: "› "; color: var(--secondary); font-weight: bold; }
     </style>
 </head>
 <body>
@@ -184,154 +86,158 @@
                 <li><a onclick="showSection('bts')" id="nav-bts">Le BTS</a></li>
                 <li><a onclick="showSection('competences')" id="nav-competences">Compétences</a></li>
                 <li><a onclick="showSection('projets')" id="nav-projets">Projets</a></li>
-                <li><a onclick="showSection('certificats')" id="nav-certificats">Certifications</a></li>
-                <li><a onclick="showSection('stages')" id="nav-stages">Stages</a></li>
-                <li><a onclick="showSection('veille')" id="nav-veille">Veille Tech</a></li>
+                <li><a onclick="showSection('contact')" id="nav-contact">Contact</a></li>
             </ul>
         </nav>
     </header>
 
     <main>
         <section id="accueil" class="active">
-            <div style="text-align: center; padding: 4rem 0;">
-                <h1>Bien sheguey ici c'est <span>Gracis WIZANA MFUMU</span></h1>
-                <p>Étudiant en BTS SIO & Passionné par l'informatique.</p>
-                <a onclick="showSection('projets')" class="btn">Voir mes projets</a>
-                <a href="#" class="btn" style="background-color: var(--primary); margin-left: 10px;">Mon CV</a>
+            <div style="text-align: center; padding: 80px 0;">
+                <h1 style="font-size: 3.5rem; margin-bottom: 10px;">Gracis <span style="color:var(--primary)">WIZANA MFUMU</span></h1>
+                <p style="font-size: 1.3rem; color: var(--text-dim);">Étudiant en BTS SIO (SISR / SLAM)</p>
+                <div style="margin-top: 40px;">
+                    <a onclick="showSection('projets')" class="btn">Découvrir mes projets</a>
+                    <a href="#" class="btn" style="background: var(--primary); margin-left: 15px;">Mon CV (PDF)</a>
+                </div>
             </div>
         </section>
 
         <section id="bts">
-            <h2>Présentation du diplôme</h2>
-            <p>Le BTS Services Informatiques aux Organisations est un diplôme d'État formant aux services informatiques fournis aux organisations.</p>
-            <div class="grid">
+            <div class="bts-header">
+                <h2>BTS SIO</h2>
+                <p>Services Informatiques aux Organisations</p>
+            </div>
+
+            <div class="info-grid" style="margin-bottom: 3rem;">
                 <div class="card">
-                    <h3>SISR</h3>
-                    <p>Infrastructures, Systèmes et Réseaux. Idéal pour devenir administrateur système ou expert en cybersécurité.</p>
+                    <h3 style="color:var(--secondary)">Présentation</h3>
+                    <p style="font-size: 0.9rem;">Formation de niveau Bac+2 préparant aux métiers de l'informatique réseau et du développement applicatif.</p>
                 </div>
                 <div class="card">
-                    <h3>SLAM</h3>
-                    <p>Solutions Logicielles et Applications Métiers. Pour ceux qui aiment coder et concevoir des logiciels.</p>
+                    <h3 style="color:var(--secondary)">Validation</h3>
+                    <ul class="list-style">
+                        <li>Diplôme d'État</li>
+                        <li>120 crédits ECTS</li>
+                        <li>Épreuves E4 (Portfolio) & E6</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="info-grid">
+                <div class="option-box sisr">
+                    <div class="option-title"><span style="font-size: 1.5rem;">⚙️</span> Option SISR</div>
+                    <p style="color: var(--accent-orange); font-size: 0.8rem; margin-bottom: 15px;">Solutions d'Infrastructure, Systèmes et Réseaux</p>
+                    <ul class="list-style">
+                        <li>Administration réseaux Windows & Linux</li>
+                        <li>Gestion du patrimoine informatique</li>
+                        <li>Cybersécurité et supervision</li>
+                    </ul>
+                </div>
+                <div class="option-box slam">
+                    <div class="option-title"><span style="font-size: 1.5rem;">HTML</span> Option SLAM</div>
+                    <p style="color: var(--accent-blue); font-size: 0.8rem; margin-bottom: 15px;">Solutions Logicielles et Applications Métiers</p>
+                    <ul class="list-style">
+                        <li>Développement Web & Mobile</li>
+                        <li>Conception de bases de données (SQL)</li>
+                        <li>Analyse et gestion de projets</li>
+                    </ul>
                 </div>
             </div>
         </section>
 
         <section id="competences">
-            <h2>Mes Compétences</h2>
-            <div class="competences-container">
-                <div class="option-card sisr">
-                    <h3>Option SISR</h3>
-                    <div class="skill-group">
-                        <h4>Compétences techniques</h4>
-                        <ul class="skill-list">
-                            <li>Administration Windows</li>
-                            <li>Administration Linux</li>
-                            <li>Virtualisation</li>
-                            <li>Réseaux TCP/IP</li>
-                        </ul>
-                    </div>
-                    <div class="skill-group">
-                        <h4>Services et Sécurité</h4>
-                        <ul class="skill-list">
-                            <li>Active Directory</li>
-                            <li>Pare-feu</li>
-                            <li>VPN</li>
-                            <li>Supervision</li>
-                        </ul>
-                    </div>
+            <h2>Compétences Techniques</h2>
+
+            <div class="comp-section">
+                <div class="comp-title-bar"><span>🔧</span> <h3>Support et mise à disposition des services</h3></div>
+                <div class="skill-grid">
+                    <div class="skill-card"><h4>Windows Server</h4><p>Notions de rôles AD, DNS et gestion des utilisateurs.</p></div>
+                    <div class="skill-card"><h4>Linux</h4><p>Bases de l'administration système sous Debian / Ubuntu.</p></div>
+                    <div class="skill-card"><h4>Active Directory</h4><p>Gestion des groupes et des droits d'accès.</p></div>
                 </div>
-                <div class="option-card slam">
-                    <h3>Option SLAM</h3>
-                    <div class="skill-group">
-                        <h4>Compétences techniques</h4>
-                        <ul class="skill-list">
-                            <li>Développement Web</li>
-                            <li>Applications mobiles</li>
-                            <li>Bases de données</li>
-                            <li>Programmation Objet</li>
-                        </ul>
-                    </div>
-                    <div class="skill-group">
-                        <h4>Technologies</h4>
-                        <ul class="skill-list">
-                            <li>Java, C#, Python</li>
-                            <li>HTML, CSS, JS</li>
-                            <li>React, Angular</li>
-                            <li>SQL, NoSQL</li>
-                        </ul>
-                    </div>
+            </div>
+
+            <div class="comp-section">
+                <div class="comp-title-bar" style="border-left-color: var(--accent-orange);"><span>🌐</span> <h3>Administration des systèmes et réseaux</h3></div>
+                <div class="skill-grid">
+                    <div class="skill-card"><h4>Cisco Packet Tracer</h4><p>Configuration de VLAN, routage statique et adressage IP.</p></div>
+                    <div class="skill-card"><h4>Virtualisation</h4><p>Utilisation de VirtualBox pour la création de labos de test.</p></div>
+                    <div class="skill-card"><h4>Wireshark</h4><p>Analyse de protocoles et diagnostic réseau de base.</p></div>
+                </div>
+            </div>
+
+            <div class="comp-section">
+                <div class="comp-title-bar" style="border-left-color: var(--accent-blue);"><span>💻</span> <h3>Développement web et mobile</h3></div>
+                <div class="skill-grid">
+                    <div class="skill-card"><h4>HTML5 / CSS3</h4><p>Conception d'interfaces web responsives et modernes.</p></div>
+                    <div class="skill-card"><h4>PHP / MySQL</h4><p>Interaction avec des bases de données pour sites dynamiques.</p></div>
+                    <div class="skill-card"><h4>Python</h4><p>Scripts d'automatisation et bases de l'algorithmique.</p></div>
                 </div>
             </div>
         </section>
 
         <section id="projets">
-            <h2>Mes Projets de Formation</h2>
-            <div class="grid">
+            <h2>Mes Réalisations</h2>
+            <div class="info-grid">
                 <div class="card">
-                    <h3>Refonte du réseau local</h3>
-                    <p>Configuration de VLANs et routage pour une PME.</p>
-                    <div class="tag">Gérer le patrimoine</div>
+                    <h3 style="color:var(--primary)">Portfolio E4</h3>
+                    <p>Développement de ce site web pour présenter mon parcours et mes compétences en BTS.</p>
+                    <p style="margin-top:10px; font-size:0.8rem; color:var(--secondary)">#HTML #CSS #JS</p>
                 </div>
                 <div class="card">
-                    <h3>Application de gestion</h3>
-                    <p>Développement d'un outil de ticketing en PHP/SQL.</p>
-                    <div class="tag">Mode Projet</div>
-                </div>
-            </div>
-        </section>
-
-        <section id="certificats">
-            <h2>Mes Certifications</h2>
-            <div class="grid">
-                <div class="card">
-                    <h3>Certification ANSSI</h3>
-                    <p>SecNumAcadémie : Initiation à la cybersécurité.</p>
-                </div>
-                <div class="card">
-                    <h3>Certification Cisco</h3>
-                    <p>Introduction aux réseaux (CCNA1).</p>
+                    <h3 style="color:var(--primary)">Maquettage Réseau</h3>
+                    <p>Mise en place d'une infrastructure complète pour une PME fictive sur Packet Tracer.</p>
+                    <p style="margin-top:10px; font-size:0.8rem; color:var(--secondary)">#Réseau #SISR</p>
                 </div>
             </div>
         </section>
 
-        <section id="stages">
-            <h2>Mes Périodes de Stage</h2>
-            <p>Contenu des stages à venir...</p>
-        </section>
-
-        <section id="veille">
-            <h2>Ma Veille Technologique</h2>
-            <p>Sujet : <strong>L'IA dans la cybersécurité</strong></p>
-            <div class="card" style="margin-top: 1rem;">
-                <h3>Article phare : L'IA générative</h3>
-                <p>Résumé de ma veille...</p>
+        <section id="contact">
+            <h2>Me Contacter</h2>
+            <div class="contact-content">
+                <div>
+                    <p style="margin-bottom: 20px;">N'hésitez pas à me contacter pour toute information complémentaire ou opportunité de stage.</p>
+                    <ul class="list-style">
+                        <li><strong>Email :</strong> gracis.wizana@exemple.fr</li>
+                        <li><strong>Localisation :</strong> Île-de-France</li>
+                        <li><strong>LinkedIn :</strong> @graciswizana</li>
+                    </ul>
+                </div>
+                <form class="contact-form">
+                    <input type="text" placeholder="Nom" required>
+                    <input type="email" placeholder="Email" required>
+                    <textarea placeholder="Votre message" rows="6" required></textarea>
+                    <button type="submit" class="btn">Envoyer le message</button>
+                </form>
             </div>
         </section>
     </main>
 
-    <footer>
-        <p>&copy; 2025 Gracis WIZANA MFUMU - Portfolio BTS SIO</p>
+    <footer style="text-align: center; padding: 2rem; color: var(--text-dim); font-size: 0.8rem; border-top: 1px solid rgba(255,255,255,0.05);">
+        &copy; 2026 Gracis WIZANA MFUMU - Portfolio BTS SIO
     </footer>
 
     <script>
         function showSection(sectionId) {
-            // 1. Cacher toutes les sections
-            const sections = document.querySelectorAll('section');
-            sections.forEach(sec => sec.classList.remove('active'));
+            // Cacher toutes les sections
+            document.querySelectorAll('section').forEach(section => {
+                section.classList.remove('active');
+            });
 
-            // 2. Afficher la section demandée
-            const targetSection = document.getElementById(sectionId);
-            if (targetSection) {
-                targetSection.classList.add('active');
-            }
+            // Désactiver tous les liens
+            document.querySelectorAll('nav a').forEach(link => {
+                link.classList.remove('active');
+            });
 
-            // 3. Mettre à jour le style du menu de navigation
-            const navLinks = document.querySelectorAll('nav a');
-            navLinks.forEach(link => link.classList.remove('active'));
+            // Afficher la section cible
+            document.getElementById(sectionId).classList.add('active');
+
+            // Activer le lien correspondant
             const activeLink = document.getElementById('nav-' + sectionId);
-            if (activeLink) activeLink.classList.add('active');
+            if(activeLink) activeLink.classList.add('active');
 
-            // 4. Remonter en haut de page
+            // Scroll vers le haut
             window.scrollTo(0, 0);
         }
     </script>
