@@ -263,33 +263,144 @@
             </div>
         </section>
         <section id="veille">
-            <h2>sujet veille</h2>
-        
-            <div class="timeline">
-                <div class="card" style="margin-bottom: 2rem; border-left: 4px solid var(--secondary);">
-                    <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap;">
-                        <div>
-                            <h3 style="color: var(--secondary); margin-bottom: 5px;">Stage de 1ère année</h3>
-                            <p style="font-weight: bold; color: #fff;"> //nom de l'entrepise</p>
-                        </div>
-                        <span style="background: rgba(3, 218, 197, 0.1); color: var(--secondary); padding: 5px 12px; border-radius: 20px; font-size: 0.8rem; font-weight: bold;">
-                            source officiel
-                        </span>
-                    </div>
-                
-                    <p style="margin-top: 15px; color: var(--text-dim);">
-                        <em>Description de la mission :</em><br>
-                        //ma description
-                    </p>
+            <h2>Veille Technologique</h2>
 
-                    <div style="margin-top: 15px;">
-                        <p style="font-size: 0.9rem; font-weight: bold; margin-bottom: 8px;">Activités principales :</p>
-                        <ul class="list-style">
-                        <li></li> //mes mission
-                    </ul>
+            <div class="veille-intro">
+                <strong>Thème : Comment les agents IA autonomes comme OpenClaw peuvent nuire à la cybersécurité</strong><br>
+                Les agents IA autonomes représentent une nouvelle génération d\'outils capables d\'agir de façon indépendante sur un ordinateur. OpenClaw, assistant IA open source avec accès total au système, illustre parfaitement les risques que ces technologies font peser sur la sécurité des infrastructures en 2026.
+            </div>
+
+            <div class="veille-stats">
+                <div class="veille-stat">
+                    <div class="num red">100%</div>
+                    <div class="lbl">Accès système accordé à l\'agent (fichiers, shell, navigateur)</div>
+                </div>
+                <div class="veille-stat">
+                    <div class="num amber">24/7</div>
+                    <div class="lbl">L\'agent tourne en continu en arrière-plan</div>
+                </div>
+                <div class="veille-stat">
+                    <div class="num blue">50+</div>
+                    <div class="lbl">Intégrations disponibles (Gmail, GitHub, Slack, Discord...)</div>
                 </div>
             </div>
 
+            <p class="veille-section-title">🦞 Qu\'est-ce qu\'OpenClaw ?</p>
+
+            <div class="veille-card" style="border-color: rgba(255,165,0,0.25);">
+                <div class="veille-card-head">
+                    <div class="veille-icon amber">🤖</div>
+                    <div>
+                        <p class="veille-card-title">OpenClaw : un agent IA open source avec accès total à la machine</p>
+                        <p class="veille-card-sub">Piloté via WhatsApp, Telegram ou Discord — tourne 24h/24 en arrière-plan</p>
+                    </div>
+                </div>
+                <p class="veille-card-body">OpenClaw est un assistant IA open source créé par Peter Steinberger, qui s\'installe directement sur la machine de l\'utilisateur (Windows, macOS, Linux). Il se pilote depuis WhatsApp, Telegram ou Discord, et dispose d\'un accès complet au système : lecture et écriture de fichiers, exécution de commandes shell, contrôle du navigateur, gestion des emails et du calendrier. C\'est un outil légitime et populaire — mais ses capacités mêmes créent des risques majeurs pour la sécurité des infrastructures.</p>
+                <div class="veille-tags">
+                    <span class="veille-tag">Agent IA</span>
+                    <span class="veille-tag">Open source</span>
+                    <span class="veille-tag">Accès système complet</span>
+                    <span class="veille-tag">openclaw.ai</span>
+                </div>
+            </div>
+
+            <p class="veille-section-title">⚠ Les risques pour la cybersécurité</p>
+
+            <div class="veille-card">
+                <div class="veille-card-head">
+                    <div class="veille-icon red">💉</div>
+                    <div>
+                        <p class="veille-card-title">Prompt injection indirect : détourner l\'agent à distance</p>
+                        <p class="veille-card-sub">L\'attaque la plus critique sur les agents autonomes</p>
+                    </div>
+                </div>
+                <p class="veille-card-body">OpenClaw navigue sur le web et lit des fichiers pour accomplir ses tâches. Un attaquant peut insérer des instructions malveillantes invisibles dans une page web ou un email que l\'agent consulte. L\'agent les interprète comme des ordres légitimes et les exécute sans vérification : exfiltration de fichiers confidentiels, envoi d\'e-mails frauduleux, installation de backdoors — le tout sans aucune interaction de la victime. C\'est le <strong style="color:#ffa500">prompt injection indirect</strong>, la menace numéro 1 sur les agents IA en 2026.</p>
+                <div class="veille-tags">
+                    <span class="veille-tag">Prompt injection</span>
+                    <span class="veille-tag">Exfiltration</span>
+                    <span class="veille-tag">Backdoor</span>
+                    <span class="veille-tag">Zéro interaction victime</span>
+                </div>
+            </div>
+
+            <div class="veille-card">
+                <div class="veille-card-head">
+                    <div class="veille-icon red">🔌</div>
+                    <div>
+                        <p class="veille-card-title">Skills malveillants : la supply chain attack des agents IA</p>
+                        <p class="veille-card-sub">Des plugins publiés librement sur ClawHub sans audit de sécurité</p>
+                    </div>
+                </div>
+                <p class="veille-card-body">OpenClaw repose sur un système de skills (plugins) que n\'importe qui peut publier librement sur ClawHub. Un attaquant peut y publier un skill en apparence utile — synchronisation cloud, gestion de mots de passe — qui collecte silencieusement des données sensibles ou ouvre un accès distant. C\'est l\'équivalent des supply chain attacks appliqué aux agents IA : la surface d\'attaque est aussi large que l\'écosystème de plugins.</p>
+                <div class="veille-tags">
+                    <span class="veille-tag">Supply chain</span>
+                    <span class="veille-tag">Plugin malveillant</span>
+                    <span class="veille-tag">ClawHub</span>
+                    <span class="veille-tag">Accès distant</span>
+                </div>
+            </div>
+
+            <div class="veille-card">
+                <div class="veille-card-head">
+                    <div class="veille-icon red">🗝</div>
+                    <div>
+                        <p class="veille-card-title">Clés API exposées &amp; compromission silencieuse 24h/24</p>
+                        <p class="veille-card-sub">Un seul poste compromis = accès total et permanent à toute la vie numérique</p>
+                    </div>
+                </div>
+                <p class="veille-card-body">Pour fonctionner, OpenClaw stocke en clair sur la machine les clés API de l\'utilisateur : OpenAI, Google, GitHub, Slack. Si le poste est compromis, toutes ces clés le sont immédiatement. De plus, l\'agent tourne en permanence en arrière-plan — un attaquant qui en prend le contrôle obtient un accès continu aux emails, fichiers, calendrier et terminal, parfois pendant des semaines sans que la victime s\'en rende compte.</p>
+                <div class="veille-tags">
+                    <span class="veille-tag">API keys</span>
+                    <span class="veille-tag">Persistance</span>
+                    <span class="veille-tag">Privilege escalation</span>
+                    <span class="veille-tag">Accès permanent</span>
+                </div>
+            </div>
+
+            <div class="veille-card">
+                <div class="veille-card-head">
+                    <div class="veille-icon amber">📡</div>
+                    <div>
+                        <p class="veille-card-title">Contrôle à distance via messagerie : un vecteur d\'attaque inédit</p>
+                        <p class="veille-card-sub">L\'agent reçoit des ordres depuis WhatsApp ou Telegram — canal rarement surveillé</p>
+                    </div>
+                </div>
+                <p class="veille-card-body">OpenClaw écoute en permanence les messages entrants sur WhatsApp, Telegram ou Discord. Si un attaquant prend le contrôle du compte de messagerie — via SIM swapping, phishing ou vol de session — il peut envoyer des commandes à l\'agent directement. Celui-ci les exécutera sans distinguer l\'attaquant de son propriétaire légitime. Ce vecteur est particulièrement dangereux car les flux de messagerie sont rarement surveillés par les outils de sécurité réseau d\'entreprise.</p>
+                <div class="veille-tags">
+                    <span class="veille-tag">SIM swapping</span>
+                    <span class="veille-tag">Session hijacking</span>
+                    <span class="veille-tag">C2 via messagerie</span>
+                    <span class="veille-tag">Détection difficile</span>
+                </div>
+            </div>
+
+            <p class="veille-section-title">🛡 Contre-mesures recommandées (côté SISR)</p>
+
+            <div class="veille-card">
+                <div class="veille-card-head">
+                    <div class="veille-icon green">🛡</div>
+                    <div>
+                        <p class="veille-card-title">Bonnes pratiques face aux agents IA autonomes en entreprise</p>
+                        <p class="veille-card-sub">Ce qu\'un administrateur SISR doit mettre en place</p>
+                    </div>
+                </div>
+                <p class="veille-card-body">Face à ces risques : bloquer l\'installation d\'agents IA non autorisés via GPO ou MDM ; surveiller les processus en arrière-plan et connexions réseau sortantes avec un EDR ; interdire le stockage de clés API en clair via un gestionnaire de secrets centralisé (Vault, Azure Key Vault) ; isoler les agents autorisés dans des environnements sandboxés sans accès aux données sensibles ; sensibiliser les collaborateurs au risque de prompt injection ; et superviser les flux de messagerie (Telegram, Discord) côté réseau.</p>
+                <div class="veille-tags">
+                    <span class="veille-tag">EDR</span>
+                    <span class="veille-tag">GPO / MDM</span>
+                    <span class="veille-tag">Vault / Key management</span>
+                    <span class="veille-tag">Sandbox</span>
+                    <span class="veille-tag">Sensibilisation</span>
+                </div>
+            </div>
+
+            <div class="veille-source">
+                Sources : <a href="https://openclaw.ai" target="_blank">openclaw.ai</a> ·
+                <a href="https://techcrunch.com/2026/01/30/openclaws-ai-assistants-are-now-building-their-own-social-network/" target="_blank">TechCrunch</a> ·
+                CERT-FR — Vecteurs d\'attaque émergents 2025 · ENISA 2024-2025 ·
+                <a href="https://dcod.ch" target="_blank">dcod.ch</a> ·
+                Kiteworks State of AI Cybersecurity 2026
+            </div>
         </section>
     </main>
 
