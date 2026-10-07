@@ -1,0 +1,66 @@
+{
+  "updatedAt": "2026-10-01T17:14:00Z",
+  "mode": "snapshot",
+  "items": [
+    {
+      "id": "f1",
+      "title": "IA agentique : de nouveaux enjeux pour les données personnelles",
+      "teaser": "La CNIL étudie les systèmes d’IA capables d’agir sur leur environnement et les chaînes de traitement complexes qu’ils impliquent.",
+      "content": "<p>Cette évolution concerne directement la gouvernance des accès, la traçabilité et la protection des données dans les systèmes d’information.</p>",
+      "source": "CNIL",
+      "date": "2026-07-20T00:00:00Z",
+      "url": "https://www.cnil.fr/fr/ia-agentique-cnil-cianum-note",
+      "block": 1
+    },
+    {
+      "id": "f2",
+      "title": "ANSSI : renforcement de la réaction face aux violations de données",
+      "teaser": "L’ANSSI a renforcé sa capacité opérationnelle de réaction face aux compromissions de comptes et aux violations de données touchant les services de l’État.",
+      "content": "<p>Pour un environnement SISR, cela souligne l’importance de la détection, de la réponse à incident, de la gestion des comptes et de la limitation des mouvements d’un attaquant.</p>",
+      "source": "ANSSI",
+      "date": "2026-09-07T00:00:00Z",
+      "url": "https://cyber.gouv.fr/actualites/cyberattaques-lanssi-met-en-place-une-capacite-renforcee-de-reaction-dediee-aux-services-de-letat/",
+      "block": 5
+    },
+    {
+      "id": "f3",
+      "title": "CERT-FR : des vulnérabilités critiques affectent des équipements réseau",
+      "teaser": "Le CERT-FR signale notamment des vulnérabilités exploitées dans Cisco ISE et Cisco Secure Email Gateway, avec des impacts allant du contournement à l’injection SQL.",
+      "content": "<p>La veille doit être reliée à l’exploitation SISR : inventaire, criticité, correctifs, validation en laboratoire et suivi des équipements exposés.</p>",
+      "source": "CERT-FR",
+      "date": "2026-09-20T00:00:00Z",
+      "url": "https://cert.ssi.gouv.fr/actualite/CERTFR-2026-ACT-040/",
+      "block": 4
+    },
+    {
+      "id": "f4",
+      "title": "CERT-FR : Oracle Virtualization exposé à plusieurs vulnérabilités",
+      "teaser": "Des vulnérabilités peuvent entraîner exécution de code à distance, déni de service et atteinte à la confidentialité sur des versions concernées.",
+      "content": "<p>La virtualisation doit donc rester incluse dans la gestion des correctifs et dans la surveillance de l’infrastructure de laboratoire comme de production.</p>",
+      "source": "CERT-FR",
+      "date": "2026-09-16T00:00:00Z",
+      "url": "https://www.cert.ssi.gouv.fr/avis/CERTFR-2026-AVI-1188/",
+      "block": 4
+    },
+    {
+      "id": "f5",
+      "title": "Microsoft Security : Zero Trust et agents IA",
+      "teaser": "Microsoft met en avant le contrôle des agents IA et l’extension des principes Zero Trust aux flux générés par les agents.",
+      "content": "<p>Pour SISR, cela renforce l’intérêt du moindre privilège, de l’identité forte, de la segmentation et de la supervision des actions automatisées.</p>",
+      "source": "Microsoft Security",
+      "date": "2026-09-24T00:00:00Z",
+      "url": "https://www.microsoft.com/en-us/security/blog/",
+      "block": 6
+    },
+    {
+      "id": "f6",
+      "title": "Cisco : sécuriser les infrastructures face à l’IA",
+      "teaser": "Cisco souligne l’accélération de la découverte de vulnérabilités par l’IA et l’importance d’une défense en profondeur.",
+      "content": "<p>La réponse côté infrastructure passe notamment par le durcissement, la détection, la gestion des vulnérabilités et des fenêtres de maintenance maîtrisées.</p>",
+      "source": "Cisco Security",
+      "date": "2026-09-04T00:00:00Z",
+      "url": "https://blogs.cisco.com/security/strengthening-the-foundation-a-predictable-customer-focused-response-to-ai-accelerated-vulnerability-discovery",
+      "block": 2
+    }
+  ]
+}

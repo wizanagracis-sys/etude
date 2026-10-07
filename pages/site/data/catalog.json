@@ -1,0 +1,634 @@
+{
+  "profile": {
+    "name": "Gracis Wizana Mfumu",
+    "role": "Étudiant BTS SIO option SISR",
+    "email": "wizanagracis@gmail.com",
+    "stage": {
+      "from": "2026-11-16",
+      "to": "2026-12-18"
+    }
+  },
+  "levels": {
+    "1": "Notions",
+    "2": "Pratique",
+    "3": "Maîtrisé en labo"
+  },
+  "categories": [
+    {
+      "id": "sys",
+      "label": "Systèmes"
+    },
+    {
+      "id": "net",
+      "label": "Réseaux"
+    },
+    {
+      "id": "virt",
+      "label": "Virtualisation"
+    },
+    {
+      "id": "sec",
+      "label": "Cybersécurité"
+    },
+    {
+      "id": "web",
+      "label": "Web & dev"
+    },
+    {
+      "id": "itil",
+      "label": "Support & ITIL"
+    }
+  ],
+  "tools": [
+    {
+      "group": "Virtualisation",
+      "items": [
+        "Proxmox",
+        "VirtualBox"
+      ]
+    },
+    {
+      "group": "Systèmes d'exploitation",
+      "items": [
+        "Debian 12",
+        "Debian 13",
+        "Windows Server 2025",
+        "Windows client / Pro",
+        "Windows 11 Entreprise"
+      ]
+    },
+    {
+      "group": "Réseau",
+      "items": [
+        "Cisco Packet Tracer"
+      ]
+    },
+    {
+      "group": "Services & développement",
+      "items": [
+        "Apache2",
+        "PHP",
+        "Python",
+        "Flask",
+        "SQL",
+        "VS Code"
+      ]
+    },
+    {
+      "group": "Sauvegarde & exploitation",
+      "items": [
+        "UrBackup",
+        "FileZilla",
+        "GLPI"
+      ]
+    },
+    {
+      "group": "Diagnostic",
+      "items": [
+        "PowerShell",
+        "ping",
+        "arp",
+        "ipconfig"
+      ]
+    },
+    {
+      "group": "Veille & référentiels",
+      "items": [
+        "Feedly",
+        "CERT-FR",
+        "MITRE ATLAS",
+        "OWASP LLM Top 10",
+        "ITIL"
+      ]
+    }
+  ],
+  "skills": [
+    {
+      "id": "win-server",
+      "sku": "SYS-01",
+      "cat": "sys",
+      "level": 2,
+      "title": "Windows Server 2025 — comptes, groupes & partages",
+      "pitch": "Déployer un serveur Windows, organiser les comptes par fonction et publier des partages réseau avec les bons droits.",
+      "tools": [
+        "Windows Server 2025",
+        "Windows 11 Entreprise",
+        "VirtualBox"
+      ],
+      "deliverables": [
+        "Partages réseau par équipe",
+        "Matrice de permissions",
+        "Guide de lecteur réseau pour les utilisateurs"
+      ],
+      "projects": [
+        "windows"
+      ]
+    },
+    {
+      "id": "win-client",
+      "sku": "SYS-02",
+      "cat": "sys",
+      "level": 2,
+      "title": "Postes Windows client / Pro",
+      "pitch": "Préparer des postes Windows prêts à l'emploi : mises à jour, outils de développement, intégration au réseau.",
+      "tools": [
+        "Windows client / Pro",
+        "Windows 11 Entreprise",
+        "VS Code",
+        "PowerShell"
+      ],
+      "deliverables": [
+        "Poste standard configuré",
+        "Intégration au réseau d'entreprise"
+      ],
+      "projects": [
+        "infra",
+        "windows"
+      ]
+    },
+    {
+      "id": "debian",
+      "sku": "SYS-03",
+      "cat": "sys",
+      "level": 2,
+      "title": "Serveur Debian 12 / 13",
+      "pitch": "Exploiter un serveur Linux : installation des services, ligne de commande, accès distant SSH / SFTP.",
+      "tools": [
+        "Debian 12",
+        "Debian 13",
+        "Apache2",
+        "PHP"
+      ],
+      "deliverables": [
+        "Serveur opérationnel",
+        "Procédure d'installation des services"
+      ],
+      "projects": [
+        "linux",
+        "php",
+        "infra"
+      ]
+    },
+    {
+      "id": "linux-perms",
+      "sku": "SYS-04",
+      "cat": "sys",
+      "level": 2,
+      "title": "Permissions Linux & espace d'équipe",
+      "pitch": "Groupes, propriétaires, SGID, umask et ACL pour un espace web partagé, sûr et cohérent.",
+      "tools": [
+        "Debian 13",
+        "Apache2"
+      ],
+      "deliverables": [
+        "Suite de commandes documentée",
+        "Justification du bit SGID"
+      ],
+      "projects": [
+        "linux"
+      ]
+    },
+    {
+      "id": "ipv4",
+      "sku": "NET-01",
+      "cat": "net",
+      "level": 2,
+      "title": "Adressage IPv4 & plans réseau",
+      "pitch": "Concevoir un plan d'adressage : réseaux /24 et /16, passerelles, plages serveurs et clients.",
+      "tools": [
+        "Cisco Packet Tracer",
+        "VirtualBox",
+        "Windows Server 2025"
+      ],
+      "deliverables": [
+        "Plan d'adressage",
+        "Schéma réseau"
+      ],
+      "projects": [
+        "infra",
+        "cisco",
+        "windows"
+      ]
+    },
+    {
+      "id": "dhcp-nat",
+      "sku": "NET-02",
+      "cat": "net",
+      "level": 2,
+      "title": "DHCP & NAT",
+      "pitch": "Distribuer les adresses (DHCP du serveur Windows ou du réseau NAT VirtualBox) et gérer l'accès au réseau.",
+      "tools": [
+        "VirtualBox",
+        "Windows Server 2025"
+      ],
+      "deliverables": [
+        "Réseau NAT LAN1 fonctionnel",
+        "Clients en adressage automatique"
+      ],
+      "projects": [
+        "infra",
+        "windows"
+      ]
+    },
+    {
+      "id": "cisco",
+      "sku": "NET-03",
+      "cat": "net",
+      "level": 2,
+      "title": "Cisco Packet Tracer — VLAN & routage",
+      "pitch": "Maquetter un réseau segmenté : VLAN, trunk 802.1Q, routage inter-VLAN et redondance HSRP.",
+      "tools": [
+        "Cisco Packet Tracer"
+      ],
+      "deliverables": [
+        "Maquette Packet Tracer",
+        "Plan d'adressage",
+        "Tests de connectivité"
+      ],
+      "projects": [
+        "cisco"
+      ]
+    },
+    {
+      "id": "diag",
+      "sku": "NET-04",
+      "cat": "net",
+      "level": 2,
+      "title": "Diagnostic réseau",
+      "pitch": "Lire des traces (latence, table ARP, hôtes inattendus) pour retrouver l'origine d'un incident réseau.",
+      "tools": [
+        "PowerShell",
+        "ping",
+        "arp",
+        "ipconfig"
+      ],
+      "deliverables": [
+        "Analyse commentée des résultats",
+        "Hypothèse d'origine du problème"
+      ],
+      "projects": [
+        "infra"
+      ]
+    },
+    {
+      "id": "virtualbox",
+      "sku": "VIRT-01",
+      "cat": "virt",
+      "level": 2,
+      "title": "VirtualBox — laboratoires multi-machines",
+      "pitch": "Importer des machines OVA, configurer les réseaux virtuels et reconstituer une infrastructure complète.",
+      "tools": [
+        "VirtualBox",
+        "Windows 11 Entreprise",
+        "Debian 13"
+      ],
+      "deliverables": [
+        "Infrastructure virtuelle reproductible",
+        "Export OVA"
+      ],
+      "projects": [
+        "infra",
+        "windows",
+        "linux"
+      ]
+    },
+    {
+      "id": "proxmox",
+      "sku": "VIRT-02",
+      "cat": "virt",
+      "level": 1,
+      "title": "Proxmox — hyperviseur",
+      "pitch": "Notions de virtualisation avec Proxmox : création et gestion de machines virtuelles pour les laboratoires.",
+      "tools": [
+        "Proxmox"
+      ],
+      "deliverables": [
+        "Machines virtuelles de laboratoire"
+      ],
+      "projects": []
+    },
+    {
+      "id": "arp-attack",
+      "sku": "SEC-01",
+      "cat": "sec",
+      "level": 2,
+      "title": "Analyse d'une attaque réseau (usurpation ARP)",
+      "pitch": "Repérer une usurpation de passerelle (adresse MAC modifiée, nouvel hôte) et en mesurer l'impact sur les données.",
+      "tools": [
+        "arp",
+        "ping",
+        "PowerShell"
+      ],
+      "deliverables": [
+        "Réponses argumentées aux 7 questions d'analyse",
+        "Risques de confidentialité et d'intégrité"
+      ],
+      "projects": [
+        "infra"
+      ]
+    },
+    {
+      "id": "backup",
+      "sku": "SEC-02",
+      "cat": "sec",
+      "level": 2,
+      "title": "Sauvegarde de fichiers avec UrBackup",
+      "pitch": "Sauvegarder les dossiers de travail des postes vers un serveur, en manuel ou périodique, et suivre les résultats.",
+      "tools": [
+        "UrBackup",
+        "Windows client / Pro",
+        "Debian 12"
+      ],
+      "deliverables": [
+        "Client UrBackup configuré",
+        "Sauvegarde vérifiée sur le serveur"
+      ],
+      "projects": [
+        "infra"
+      ]
+    },
+    {
+      "id": "least-privilege",
+      "sku": "SEC-03",
+      "cat": "sec",
+      "level": 2,
+      "title": "Droits d'accès & moindre privilège",
+      "pitch": "Appliquer le moindre privilège : droits NTFS et de partage sous Windows, ACL et groupes sous Linux.",
+      "tools": [
+        "Windows Server 2025",
+        "Debian 13"
+      ],
+      "deliverables": [
+        "Droits par profil",
+        "Tests d'accès par utilisateur"
+      ],
+      "projects": [
+        "windows",
+        "linux"
+      ]
+    },
+    {
+      "id": "veille",
+      "sku": "SEC-04",
+      "cat": "sec",
+      "level": 2,
+      "title": "Veille cybersécurité & Zero Trust",
+      "pitch": "Veille structurée (CERT-FR, CNIL, Microsoft, Cisco) sur l'IA agentique, le Zero Trust et les vulnérabilités.",
+      "tools": [
+        "Feedly",
+        "CERT-FR",
+        "MITRE ATLAS",
+        "OWASP LLM Top 10"
+      ],
+      "deliverables": [
+        "Fiches de veille actualisées",
+        "Trame d'analyse en 9 blocs"
+      ],
+      "projects": [],
+      "link": "#veille"
+    },
+    {
+      "id": "static-web",
+      "sku": "WEB-01",
+      "cat": "web",
+      "level": 2,
+      "title": "Site statique HTML / CSS",
+      "pitch": "Intégrer un cahier des charges : cadres iframe, contenus externes, charte graphique dans une feuille CSS séparée.",
+      "tools": [
+        "FileZilla"
+      ],
+      "deliverables": [
+        "Portail à deux cadres",
+        "Feuille de style CSS",
+        "Publication sur serveur FTP"
+      ],
+      "projects": [
+        "web"
+      ]
+    },
+    {
+      "id": "php",
+      "sku": "WEB-02",
+      "cat": "web",
+      "level": 2,
+      "title": "Page dynamique PHP sur Apache",
+      "pitch": "Installer Apache2 et PHP, puis traiter un formulaire en POST avec validation et page de confirmation.",
+      "tools": [
+        "Apache2",
+        "PHP",
+        "Debian 12"
+      ],
+      "deliverables": [
+        "Formulaire HTML / CSS",
+        "Script traitement.php"
+      ],
+      "projects": [
+        "php"
+      ]
+    },
+    {
+      "id": "flask",
+      "sku": "WEB-03",
+      "cat": "web",
+      "level": 2,
+      "title": "Application Flask & requêtes SQL",
+      "pitch": "Relier une application Python Flask à une base de données pour afficher des résultats choisis par l'utilisateur.",
+      "tools": [
+        "Python",
+        "Flask",
+        "SQL"
+      ],
+      "deliverables": [
+        "Application Flask (routes GET / POST)",
+        "Pages HTML en templates"
+      ],
+      "projects": [
+        "flask"
+      ]
+    },
+    {
+      "id": "park",
+      "sku": "ITIL-01",
+      "cat": "itil",
+      "level": 2,
+      "title": "Renouvellement de parc & chiffrage",
+      "pitch": "Définir une configuration standard, justifier chaque composant et chiffrer le coût par poste.",
+      "tools": [
+        "ITIL"
+      ],
+      "deliverables": [
+        "Tableau comparatif des composants",
+        "Argumentaire d'alignement IT / métier"
+      ],
+      "projects": [
+        "parc"
+      ]
+    },
+    {
+      "id": "docs",
+      "sku": "ITIL-02",
+      "cat": "itil",
+      "level": 2,
+      "title": "Documentation & tableaux de tests",
+      "pitch": "Documenter ce qui est déployé : jeux de tests, résultats, guides utilisateurs et livrables.",
+      "tools": [
+        "GLPI"
+      ],
+      "deliverables": [
+        "Tableau de tests et résultats",
+        "Guides utilisateurs",
+        "Livrables remis via GLPI"
+      ],
+      "projects": [
+        "windows",
+        "infra"
+      ]
+    },
+    {
+      "id": "support",
+      "sku": "ITIL-03",
+      "cat": "itil",
+      "level": 1,
+      "title": "Support utilisateurs & ticketing",
+      "pitch": "Notions de prise en charge d'une demande d'assistance : formulaire de support et suivi par ticket.",
+      "tools": [
+        "GLPI",
+        "PHP"
+      ],
+      "deliverables": [
+        "Formulaire de demande d'assistance"
+      ],
+      "projects": [
+        "php"
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "id": "windows",
+      "cat": "sys",
+      "code": "SYSTÈMES · WINDOWS",
+      "title": "Serveur de fichiers Windows Server 2025 — droits & partages",
+      "summary": "Publier trois partages réseau avec des permissions adaptées à chaque fonction de l'entreprise.",
+      "context": "Mise en situation TechInShell (ESN de 500 collaborateurs). Windows Server 2025 et deux postes Windows 11 Entreprise importés dans VirtualBox. Comptes et groupes par fonction (direction, développeurs, designers), trois partages (WebDesign, Besoins et conception, TechInShell), droits NTFS combinés aux droits de partage, stockage distinct du système et guide de lecteur réseau.",
+      "tools": [
+        "Windows Server 2025",
+        "Windows 11 Entreprise",
+        "VirtualBox",
+        "NTFS",
+        "DHCP"
+      ],
+      "result": "Permissions par profil, jeu de tests et tableau de résultats documentés."
+    },
+    {
+      "id": "linux",
+      "cat": "sys",
+      "code": "SYSTÈMES · LINUX",
+      "title": "Serveur Debian 13 — espace web collaboratif",
+      "summary": "Préparer un espace de travail web partagé où chaque développeur peut déployer sans casser les droits.",
+      "context": "Serveur Debian 13 importé dans VirtualBox. Répertoire /srv/www partagé par un groupe d'équipe : SGID pour l'héritage du groupe, umask adapté et ACL pour garantir l'accès du service Apache (www-data) aux nouveaux fichiers.",
+      "tools": [
+        "Debian 13",
+        "Apache2",
+        "ACL",
+        "SGID",
+        "VirtualBox"
+      ],
+      "result": "Droits cohérents sur tout nouveau fichier ou dossier, avec justification du SGID."
+    },
+    {
+      "id": "cisco",
+      "cat": "net",
+      "code": "RÉSEAU · CISCO",
+      "title": "Maquette réseau Cisco — VLAN & routage",
+      "summary": "Segmenter un réseau multi-services et maîtriser le routage entre VLAN.",
+      "context": "Maquette Cisco Packet Tracer : segmentation, trunk 802.1Q, routage inter-VLAN, plan d'adressage IPv4, DHCP / DNS et HSRP. Reconstitution d'une infrastructure à deux réseaux (utilisateurs en /24, services web en /16) avec passerelles dédiées.",
+      "tools": [
+        "Cisco Packet Tracer",
+        "VLAN",
+        "802.1Q",
+        "IPv4",
+        "HSRP"
+      ],
+      "result": "Réseau logique segmenté, adressage cohérent et tests de connectivité."
+    },
+    {
+      "id": "infra",
+      "cat": "virt",
+      "code": "VIRTUALISATION · SAUVEGARDE",
+      "title": "Infrastructure virtualisée — réseau, sauvegarde & analyse d'incident",
+      "summary": "Simuler une petite infrastructure de travail, sauvegarder les données et analyser une anomalie réseau.",
+      "context": "Deux postes Windows et un serveur Debian 12 / 13 sous VirtualBox, réseau NAT LAN1 en 192.168.10.0/24 (passerelle .1, serveur .50, clients .100 et .101 en DHCP). VS Code sur les postes, sauvegarde des dossiers de développement vers UrBackup. Prolongation : analyse de traces (latence en hausse, table ARP, hôte inattendu) menant à une usurpation de passerelle.",
+      "tools": [
+        "VirtualBox",
+        "Windows client / Pro",
+        "Debian 12",
+        "UrBackup",
+        "VS Code",
+        "PowerShell"
+      ],
+      "result": "Environnement reproductible, sauvegarde fonctionnelle et diagnostic d'attaque argumenté."
+    },
+    {
+      "id": "web",
+      "cat": "web",
+      "code": "WEB · STATIQUE",
+      "title": "Portail web TechInShell — iframes & charte graphique",
+      "summary": "Transformer un cahier des charges en portail web cohérent et sobre.",
+      "context": "Page d'accueil à deux cadres (navigation 30 %, contenu 65 %, hauteur 800 px) : carte Google Maps, vidéo YouTube sur ITIL, site externe, organigramme, formulaire et page CNIL. Style défini dans un fichier CSS séparé, publication via FileZilla.",
+      "tools": [
+        "HTML",
+        "CSS",
+        "iframes",
+        "FileZilla"
+      ],
+      "result": "Portail structuré, charte sobre et cohérente avec l'activité de l'entreprise."
+    },
+    {
+      "id": "php",
+      "cat": "web",
+      "code": "WEB · DYNAMIQUE",
+      "title": "Formulaire de support — PHP sur Apache",
+      "summary": "Permettre aux employés d'envoyer une demande d'assistance en attendant un outil de ticketing.",
+      "context": "Serveur Debian avec Apache2 et PHP. Formulaire HTML / CSS (nom, e-mail, équipement, type de problème, description) puis traitement en POST dans traitement.php : validation du champ obligatoire et page de confirmation.",
+      "tools": [
+        "Apache2",
+        "PHP",
+        "HTML",
+        "CSS",
+        "Debian 12"
+      ],
+      "result": "Chaîne formulaire → traitement → confirmation fonctionnelle, avec gestion d'erreur."
+    },
+    {
+      "id": "flask",
+      "cat": "web",
+      "code": "WEB · PYTHON & SQL",
+      "title": "Réservation de salles — Flask & SQL",
+      "summary": "Afficher les salles disponibles à une date choisie, à partir d'une base de données.",
+      "context": "Application Python Flask (App.py, templates form.html et salle_available.html) : l'utilisateur choisit une date, une requête SQL interroge la base distante et le résultat s'affiche dans un tableau.",
+      "tools": [
+        "Python",
+        "Flask",
+        "SQL",
+        "HTML",
+        "CSS"
+      ],
+      "result": "Application web connectée à une base de données, structurée en routes et templates."
+    },
+    {
+      "id": "parc",
+      "cat": "itil",
+      "code": "ITIL · PARC INFORMATIQUE",
+      "title": "Renouvellement du parc informatique — plan ITIL",
+      "summary": "Définir un poste standard pour les développeurs et en justifier le coût.",
+      "context": "Configuration « Développeur et Concepteur » : processeur, mémoire, carte graphique, SSD, HDD, carte mère, boîtier, ventilateur, écran, clavier et souris, chacun justifié. Coût de 705,10 € HT (888,01 € TTC) par poste, avec argumentaire d'alignement IT / métier et de déploiement standardisé.",
+      "tools": [
+        "ITIL",
+        "Cahier des charges",
+        "Chiffrage"
+      ],
+      "result": "Configuration standard chiffrée, justifiée composant par composant."
+    }
+  ]
+}

@@ -1,0 +1,256 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#0b0f1a">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data:; style-src 'self'; script-src 'self'; connect-src 'self'; base-uri 'none'; form-action 'self'">
+  <meta name="description" content="Portfolio de Gracis Wizana Mfumu — BTS SIO SISR. Boutique de compétences : systèmes, réseaux, virtualisation et cybersécurité.">
+  <title>GR9 | Portfolio SISR</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23BB86FC'/%3E%3Ctext x='32' y='42' font-size='26' font-weight='900' text-anchor='middle' fill='%230b0f1a' font-family='sans-serif'%3EGR9%3C/text%3E%3C/svg%3E">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<a class="skip-link" href="#app">Aller au contenu</a>
+
+<header class="site-header" id="site-header">
+  <div class="topbar container">
+    <a class="brand" href="#accueil" aria-label="GR9 — Accueil">
+      <span class="brand-mark">GR9</span>
+      <span class="brand-copy"><strong>GRACIS WIZANA MFUMU</strong><small>BTS SIO · SISR</small></span>
+    </a>
+
+    <nav class="main-nav" aria-label="Navigation principale">
+      <a class="nav-link" data-nav="accueil" href="#accueil">Accueil</a>
+      <a class="nav-link" data-nav="catalogue" href="#catalogue">Boutique</a>
+      <a class="nav-link" data-nav="realisations" href="#realisations">Réalisations</a>
+      <a class="nav-link" data-nav="veille" href="#veille">Veille</a>
+      <a class="nav-link" data-nav="parcours" href="#parcours">Parcours</a>
+      <a class="nav-link" data-nav="contact" href="#contact">Contact</a>
+    </nav>
+
+    <button class="cart-btn" id="cart-btn" type="button" aria-label="Ouvrir ma sélection de compétences">
+      <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 7h12l-1 13H7L6 7Z"/><path d="M9 7a3 3 0 0 1 6 0"/></svg>
+      <span class="cart-label">Ma sélection</span>
+      <span class="cart-count" id="cart-count">0</span>
+    </button>
+  </div>
+
+  <!-- Sous-navigation : visible uniquement après un clic sur une section, et propre à cette section -->
+  <div class="subnav-wrap" id="subnav" hidden>
+    <div class="container subnav">
+      <span class="subnav-label" id="subnav-label"></span>
+      <nav class="subnav-links" id="subnav-links" aria-label="Sous-navigation de la section"></nav>
+    </div>
+  </div>
+</header>
+
+<main id="app">
+
+  <!-- ACCUEIL -->
+  <section class="page page-home" data-page="accueil">
+    <div class="home-hero container" data-sub="presentation">
+      <span class="eyebrow">PORTFOLIO · BTS SIO SISR · 2026</span>
+      <span class="home-kicker">SYSTÈMES · RÉSEAUX · CYBERSÉCURITÉ</span>
+      <h1>Gracis Wizana Mfumu</h1>
+      <p>Étudiant en BTS SIO SISR, orienté administration systèmes, réseaux, virtualisation et cybersécurité. Parcourez ma boutique, composez votre sélection de compétences, puis échangeons.</p>
+      <div class="home-actions">
+        <a class="btn btn-primary ripple" href="#catalogue">Ouvrir la boutique</a>
+        <a class="btn btn-ghost ripple" href="#realisations">Voir mes réalisations</a>
+      </div>
+    </div>
+
+    <div class="container home-block" data-sub="outils">
+      <div class="section-heading">
+        <div><span class="eyebrow">OUTILS UTILISÉS</span><h2>Mon environnement de travail</h2></div>
+        <p>Cliquez sur un outil pour voir les compétences de la boutique qui l'utilisent.</p>
+      </div>
+      <div class="tool-groups" id="tools-home"></div>
+    </div>
+
+    <div class="container home-block" data-sub="disponibilite">
+      <div class="card availability">
+        <div><span class="mini-label">DISPONIBILITÉ</span><h3>Période de stage SISR</h3><p>16/11/2026 → 18/12/2026 · Île-de-France (Seine-Saint-Denis)</p></div>
+        <a class="btn btn-primary ripple" href="#contact/message">Me contacter</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- BOUTIQUE -->
+  <section class="page" data-page="catalogue" id="catalogue">
+    <div class="container">
+      <div class="section-heading">
+        <div><span class="eyebrow">BOUTIQUE · COMPÉTENCES SISR</span><h2>Choisissez parmi mes compétences</h2></div>
+        <p>Parcourez les fiches, ajoutez celles qui vous intéressent à votre sélection, puis envoyez-la en un clic. Aucun paiement : juste un échange.</p>
+      </div>
+      <div class="store-toolbar">
+        <label class="search-field"><span class="sr-only">Rechercher une compétence ou un outil</span>
+          <input type="search" id="search" placeholder="Rechercher : Debian, VLAN, sauvegarde…" autocomplete="off"></label>
+        <label class="sort-field"><span class="sr-only">Trier</span>
+          <select id="sort"><option value="default">Tri : référence</option><option value="level">Tri : niveau</option><option value="az">Tri : A → Z</option></select></label>
+        <span class="result-count" id="catalogue-count" aria-live="polite"></span>
+      </div>
+      <div class="product-grid" id="product-grid"></div>
+    </div>
+  </section>
+
+  <!-- RÉALISATIONS -->
+  <section class="page" data-page="realisations">
+    <div class="container">
+      <div class="section-heading">
+        <div><span class="eyebrow">RÉALISATIONS · PROJETS TECHNIQUES</span><h2>Projets réalisés</h2></div>
+        <p>Mises en situation TechInShell (ESN) et maquettes de laboratoire. Chaque projet indique les outils utilisés et les compétences de la boutique qu'il illustre.</p>
+      </div>
+      <div class="project-grid" id="project-grid"></div>
+    </div>
+  </section>
+
+  <!-- VEILLE -->
+  <section class="page" data-page="veille">
+    <div class="container">
+      <div class="section-heading" data-sub="actualites">
+        <div><span class="eyebrow">VEILLE TECHNOLOGIQUE</span><h2>IT, IA autonome & cybersécurité</h2></div>
+        <div class="feed-status" id="feed-status" role="status"><span class="status-dot"></span> Initialisation…</div>
+      </div>
+      <div class="news-grid" id="news-grid"></div>
+      <div class="news-footer"><span id="news-updated">Dernière mise à jour : —</span><button class="btn btn-small btn-ghost ripple" id="news-refresh" type="button">Actualiser</button></div>
+
+      <div class="veille-section" data-sub="trame">
+        <div class="section-heading"><div><span class="eyebrow">TRAME D'ANALYSE</span><h2>9 blocs de lecture</h2></div><p>Chaque actualité est rattachée à un bloc. Cliquez sur un bloc pour filtrer les fiches.</p></div>
+        <div class="trame-grid" id="trame-grid">
+          <button class="trame-block" type="button" data-block="1"><b>1</b><span>Contexte & problématique</span><em></em></button>
+          <button class="trame-block" type="button" data-block="2"><b>2</b><span>Évolution technologique & tendances</span><em></em></button>
+          <button class="trame-block" type="button" data-block="3"><b>3</b><span>Fonctionnement des technologies étudiées</span><em></em></button>
+          <button class="trame-block" type="button" data-block="4"><b>4</b><span>Menaces, attaques & dérives</span><em></em></button>
+          <button class="trame-block" type="button" data-block="5"><b>5</b><span>Impacts sur l'infrastructure SISR</span><em></em></button>
+          <button class="trame-block" type="button" data-block="6"><b>6</b><span>Protection & architecture de sécurité</span><em></em></button>
+          <button class="trame-block" type="button" data-block="7"><b>7</b><span>Cas concrets & scénarios</span><em></em></button>
+          <button class="trame-block" type="button" data-block="8"><b>8</b><span>Prospective & compétences SISR</span><em></em></button>
+          <button class="trame-block" type="button" data-block="9"><b>9</b><span>Synthèse & bilan</span><em></em></button>
+        </div>
+      </div>
+
+      <div class="veille-section" data-sub="sources">
+        <div class="section-heading"><div><span class="eyebrow">SOURCES</span><h2>D'où viennent les informations</h2></div><p>Seuls les liens issus de ces domaines sont acceptés dans la veille.</p></div>
+        <div class="source-grid">
+          <article class="card"><span class="mini-label">INSTITUTIONNEL</span><h3>CERT-FR · ANSSI · CNIL</h3><p>Avis et alertes de sécurité, publications sur la protection des données et l'IA.</p></article>
+          <article class="card"><span class="mini-label">ÉDITEURS</span><h3>Microsoft Security · Cisco Security</h3><p>Blogs et avis de sécurité sur les systèmes, le réseau, le Zero Trust et l'IA.</p></article>
+          <article class="card"><span class="mini-label">RÉFÉRENTIELS & OUTILS</span><h3>Feedly · MITRE ATLAS · OWASP LLM Top 10</h3><p>Agrégation des flux et cadres d'analyse des risques liés à l'IA.</p></article>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PARCOURS -->
+  <section class="page" data-page="parcours">
+    <div class="container">
+      <div class="section-heading"><div><span class="eyebrow">PARCOURS · FORMATION & EXPÉRIENCE</span><h2>Mon parcours</h2></div><p>Formation, expérience, niveaux de compétences et outils.</p></div>
+      <div class="career-grid">
+        <article class="card profile-block" data-sub="profil"><span class="mini-label">PROFIL</span><h3>BTS SIO SISR</h3><p>Étudiant orienté administration des infrastructures, systèmes, réseaux et cybersécurité. Rigoureux, curieux et impliqué.</p></article>
+        <article class="card profile-block" data-sub="formation" data-nospy><span class="mini-label">FORMATION</span><h3>BTS SIO — option SISR</h3><p>Lycée Parc de Vilgénis, Massy · 09/2025 — en cours</p><p>Baccalauréat général · Mathématiques & SES · Lycée Jean Renoir, Bondy · 2025</p></article>
+        <article class="card profile-block" data-sub="experience" data-nospy><span class="mini-label">EXPÉRIENCE</span><h3>Stage — KN Partners</h3><p>Le Blanc-Mesnil · 08/06/2026 → 10/07/2026. Qualification de données, recherche d'informations, supports CRM et suivi d'actions.</p></article>
+      </div>
+
+      <div class="parcours-block" data-sub="competences">
+        <div class="section-heading"><div><span class="eyebrow">COMPÉTENCES</span><h2>Niveaux par domaine</h2></div><p>Mêmes niveaux que la boutique : Notions, Pratique ou Maîtrisé en labo.</p></div>
+        <div class="skill-matrix" id="skill-matrix"></div>
+      </div>
+
+      <div class="parcours-block" data-sub="outils">
+        <div class="section-heading"><div><span class="eyebrow">OUTILS</span><h2>Outils utilisés</h2></div><p>Les outils sont rattachés aux compétences et aux projets correspondants.</p></div>
+        <div class="tool-groups" id="tools-parcours"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="page" data-page="contact">
+    <div class="container">
+      <div class="section-heading"><div><span class="eyebrow">CONTACT · ÉCHANGE PROFESSIONNEL</span><h2>Envoyer un message</h2></div><p>Votre sélection de compétences peut être jointe au message en un clic.</p></div>
+      <div class="contact-grid">
+        <div class="contact-copy">
+          <div data-sub="coordonnees">
+            <span class="mini-label">COORDONNÉES</span>
+            <h3>Gracis Wizana Mfumu</h3>
+            <p>Étudiant BTS SIO SISR · systèmes, réseaux et cybersécurité.</p>
+            <div class="contact-points">
+              <div><strong>E-mail</strong><span>wizanagracis@gmail.com</span></div>
+              <div><strong>Téléphone</strong><span>07 74 11 91 58</span></div>
+              <div><strong>Stage</strong><span>16/11/2026 → 18/12/2026</span></div>
+            </div>
+          </div>
+          <div class="selection-box card" data-sub="selection">
+            <span class="mini-label">MA SÉLECTION</span>
+            <div id="selection-list"></div>
+            <button class="btn btn-small btn-ghost ripple" type="button" id="selection-fill">Insérer dans le message</button>
+          </div>
+        </div>
+
+        <form class="card contact-card" id="contact-form" data-sub="message" data-email="wizanagracis@gmail.com" enctype="multipart/form-data">
+          <div class="form-grid"><label>Nom / entreprise<input name="name" autocomplete="name" maxlength="120" required></label><label>E-mail<input name="email" type="email" autocomplete="email" maxlength="160" required></label></div>
+          <label>Objet<input name="subject" maxlength="160" required></label>
+          <label>Message<textarea name="message" id="message-field" rows="8" maxlength="6000" required></textarea></label>
+          <label class="hp" aria-hidden="true">Ne pas remplir<input name="website" tabindex="-1" autocomplete="off"></label>
+          <label>Pièces jointes <input name="attachments" type="file" multiple accept=".pdf,.doc,.docx,.png,.jpg,.jpeg,.zip,.txt,.xlsx,.pptx"></label>
+          <p class="form-help">Formats courants, 5 fichiers de 8 Mo maximum. Sans serveur d'envoi, votre application mail s'ouvre avec le message prérempli (pièces jointes à ajouter à la main).</p>
+          <div class="form-note" id="form-note" role="status"></div>
+          <button class="btn btn-primary ripple" type="submit">Envoyer</button>
+        </form>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-bottom"><span>© 2026 Gracis Wizana Mfumu · GR9</span><span>BTS SIO SISR · Portfolio</span><a href="#contact">wizanagracis@gmail.com</a></div>
+</footer>
+
+<!-- Fiche projet -->
+<dialog class="modal" id="project-modal"><div class="modal-inner">
+  <button class="icon-btn modal-close" data-close-dialog type="button" aria-label="Fermer">×</button>
+  <span class="eyebrow" id="project-category"></span><h2 id="project-title"></h2><p id="project-summary"></p>
+  <div class="modal-columns"><div><h3>Contexte</h3><p id="project-context"></p></div><div><h3>Outils</h3><div class="tags" id="project-tech"></div><h3 class="modal-sub">Compétences illustrées</h3><div class="linklist" id="project-skills"></div></div></div>
+  <div class="modal-result" id="project-result"></div>
+</div></dialog>
+
+<!-- Fiche compétence -->
+<dialog class="modal" id="skill-modal"><div class="modal-inner">
+  <button class="icon-btn modal-close" data-close-dialog type="button" aria-label="Fermer">×</button>
+  <span class="eyebrow" id="skill-eyebrow"></span><h2 id="skill-title"></h2><p id="skill-pitch"></p>
+  <div class="level level-lg" id="skill-level"></div>
+  <div class="modal-columns"><div><h3>Livrables</h3><ul class="plain-list" id="skill-deliverables"></ul></div><div><h3>Outils</h3><div class="tags" id="skill-tools"></div><h3 class="modal-sub">Projets associés</h3><div class="linklist" id="skill-projects"></div></div></div>
+  <div class="modal-actions"><button class="btn btn-primary btn-small ripple" id="skill-add" type="button"></button></div>
+</div></dialog>
+
+<!-- Fiche veille -->
+<dialog class="modal" id="news-modal"><div class="modal-inner">
+  <button class="icon-btn modal-close" data-close-dialog type="button" aria-label="Fermer">×</button>
+  <div class="news-modal-meta"><span id="news-modal-source"></span><span id="news-modal-date"></span></div>
+  <h2 id="news-modal-title"></h2><p class="news-modal-lead" id="news-modal-teaser"></p><div class="news-modal-content" id="news-modal-content"></div>
+  <div class="modal-actions"><a class="btn btn-primary btn-small" id="news-modal-source-link" target="_blank" rel="noopener noreferrer">Source originale</a></div>
+</div></dialog>
+
+<!-- Ma sélection (panier) -->
+<dialog class="modal drawer" id="cart-modal"><div class="modal-inner">
+  <button class="icon-btn modal-close" data-close-dialog type="button" aria-label="Fermer">×</button>
+  <span class="eyebrow">MA SÉLECTION</span><h2>Compétences choisies</h2>
+  <div id="cart-items"></div>
+  <div class="drawer-actions">
+    <button class="btn btn-primary ripple" type="button" id="cart-send">Demander un échange</button>
+    <button class="btn btn-ghost btn-small ripple" type="button" id="cart-clear">Vider la sélection</button>
+  </div>
+</div></dialog>
+
+<!-- Assistant -->
+<button class="assistant-fab" id="assistant-fab" type="button" aria-expanded="false" aria-controls="assistant">Assistant</button>
+<aside class="assistant" id="assistant" hidden aria-label="Assistant du portfolio">
+  <div class="assistant-head"><strong>Assistant du portfolio</strong><button class="icon-btn" type="button" id="assistant-close" aria-label="Fermer l'assistant">×</button></div>
+  <div class="assistant-log" id="assistant-log" aria-live="polite"></div>
+  <form class="assistant-form" id="assistant-form"><input id="assistant-input" maxlength="600" placeholder="Posez une question…" autocomplete="off" required><button class="btn btn-primary btn-small" type="submit">Envoyer</button></form>
+</aside>
+
+<div class="toast-region" id="toast-region" aria-live="polite"></div>
+<noscript><p class="noscript">Ce portfolio nécessite JavaScript.</p></noscript>
+<script src="js/app.js" defer></script>
+</body>
+</html>
