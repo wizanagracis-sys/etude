@@ -1,0 +1,36 @@
+name: Veille automatique
+
+on:
+  schedule:
+    - cron: '17 */2 * * *'   # toutes les 2 h
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: veille
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: npm install --omit=dev --no-audit --no-fund
+      - name: Mettre à jour la veille
+        run: node scripts/update-news.mjs
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}   # Settings → Secrets and variables → Actions
+          GEMINI_MODEL: ${{ vars.GEMINI_MODEL }}
+      - name: Vérifier la cohérence du site
+        run: node scripts/check-site.mjs
+      - name: Publier si changement
+        run: |
+          git config user.name "veille-bot"
+          git config user.email "veille-bot@users.noreply.github.com"
+          git add data/news.json
+          git diff --cached --quiet || (git commit -m "veille : mise à jour automatique" && git push)
